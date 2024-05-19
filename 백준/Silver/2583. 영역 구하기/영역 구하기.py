@@ -1,6 +1,3 @@
-import sys
-sys.setrecursionlimit(10**6)
-
 M, N, K = map(int, input().split())
 graph = [[0 for _ in range(M)] for _ in range(N)]
 
@@ -13,6 +10,7 @@ for _ in range(K):
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 res = []
+
 
 def dfs(x, y):
     stack = [(x, y)]
@@ -30,8 +28,9 @@ def dfs(x, y):
 
                 if 0 <= nx < N and 0 <= ny < M and graph[nx][ny] == 0:
                     stack.append((nx, ny))
-    
+
     return area_size
+
 
 for i in range(N):
     for j in range(M):
